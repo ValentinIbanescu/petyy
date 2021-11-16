@@ -51,3 +51,18 @@ puts "creating pets"
   )
 end
 puts "#{Pet.count} pets were created successfully."
+
+pet_id = rand(Pet.first.id..Pet.last.id)
+
+puts "destroying pets"
+Booking.destroy_all
+puts "creating bookings"
+5.times do
+  Booking.create(
+    user_id: user_id,
+    pet_id: pet_id,
+    start_date: '20210912102511',
+    end_date: '20210919102511'
+  )
+end
+puts "#{Booking.count} bookings were created successfully."
