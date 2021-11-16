@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# User.new()
+
 puts "destroying users"
 User.destroy_all
 puts "creating users"
@@ -18,3 +21,19 @@ puts "creating users"
   )
 end
 puts "#{User.count} users were created successfully."
+
+user_id = rand(User.first.id..User.last.id)
+
+puts "destroying pets"
+Pet.destroy_all
+puts "creating pets"
+5.times do
+  Pet.create(
+    user_id: user_id,
+    name: Faker::Name.first_name,
+    age: rand(0..100),
+    category: ["cat", "dog", "corckadile", "snake", "tiger", "gorilla"].sample,
+    diet: Faker::Food.dish
+  )
+end
+puts "#{Pet.count} pets were created successfully."
