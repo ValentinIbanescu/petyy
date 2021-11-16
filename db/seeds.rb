@@ -7,14 +7,47 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "destroying users"
 User.destroy_all
-puts "creating users"
+
+User.create!(
+    password: "123457682192",
+    email: "akiho@lewagon.com",
+    first_name: "Akiho",
+    last_name: "Hamamoto",
+    address:"Berlin 1")
+
+User.create!(
+    password: "123457682192",
+    email: "yian@lewagon.com",
+    first_name: "Yi-An",
+    last_name: "Ko",
+    address:"Berlin 1")
+
+User.create!(
+    password: "123457682192",
+    email: "maruan@lewagon.com",
+    first_name: "Maruan",
+    last_name: "Paschen",
+    address:"Berlin 1")
+
+User.create!(
+    password: "123457682192",
+    email: "valentin@lewagon.com",
+    first_name: "Valentin",
+    last_name: "Miller",
+    address:"Berlin 1")
+
+user_id = rand(User.first.id..User.last.id)
+
+puts "destroying pets"
+Pet.destroy_all
+puts "creating pets"
 5.times do
-  User.create(
-    password: Faker::Internet.password,
-    email: Faker::Internet.email,
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    address: Faker::Address.full_address
+  Pet.create(
+    user_id: user_id,
+    name: Faker::Name.first_name,
+    age: rand(0..100),
+    category: ["cat", "dog", "corckadile", "snake", "tiger", "gorilla"].sample,
+    diet: Faker::Food.dish
   )
 end
-puts "#{User.count} users were created successfully."
+puts "#{Pet.count} pets were created successfully."
