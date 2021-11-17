@@ -1,2 +1,8 @@
 <h1>Look at this Pet! Awesome!</h1>
-<p>Find me in app/views/pets/show.html.erb</p>
+
+<div>
+<% @pets.each do |pet| %>
+<h2> Name: <%= pet.name %> - Species: <%= pet.category %></h2>
+<p><%= "Age:" pet.age %></p>
+<% end %>
+</div>
