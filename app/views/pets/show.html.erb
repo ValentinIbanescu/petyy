@@ -1,2 +1,9 @@
-<h1>Look at this Pet! Awesome!</h1>
-<p>Find me in app/views/pets/show.html.erb</p>
+<h1><%= @pet.name %> </h1>
+
+<div>
+<p>Species: <%= @pet.category %></p>
+<p>Age: <%= @pet.age %></p>
+<p>Mecial Situation:<%=@pet.medical_situation %></p>
+</div>
+<p><%= link_to "Book this pet", new_pet_booking_path(@pet) %> </p>
+<p><%= link_to "Back to the list", pets_path %></p>

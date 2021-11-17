@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+   skip_before_action :authenticate_user!
   def show
     @pet = Pet.find(params[:id])
   end
@@ -6,7 +7,7 @@ class PetsController < ApplicationController
   def index
     @pets = Pet.all
   end
-
+  
   def new
     @pet = Pet.new
   end
