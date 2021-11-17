@@ -5,4 +5,4 @@
 <p>Age: <%= @pet.age %></p>
 <p>Mecial Situation:<%=@pet.medical_situation %></p>
 </div>
-<p><% if user_signed_in? <%= link_to "Book this pet", bookings_path %> : <%= link_to ""  %> %> </p>
+<p><%= link_to "Book this pet", new_pet_booking_path(@pet) %> </p>
