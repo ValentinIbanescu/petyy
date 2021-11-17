@@ -21,4 +21,11 @@ From <%= booking.start_date %> to <%= booking.end_date %></li>
 <% end %>
 </ul>
 
+
 <%= link_to 'Back pet listing page', pets_path %>
+
+
+<h3>Past bookings</h3>
+
+<p><%= link_to "logout", destroy_user_session_path, method: :delete %></p>
+
