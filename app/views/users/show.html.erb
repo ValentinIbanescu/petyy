@@ -1,8 +1,13 @@
-
-
 <h1>Hello <%= @user.first_name %></h1>
 
-<h3>Upcoming bookings</h3>
+<h3>Your pets</h3>
+<ul>
+<% @pets.each do | pet | %>
+<li> <%= pet.name %></li>
+<% end %>
+</ul>
+
+<h3>Your bookings</h3>
 <ul>
 <% @bookings.each do | booking | %>
 <li> <%= Pet.find(booking.pet_id).name %>(<%= Pet.find(booking.pet_id).category %>)
@@ -10,5 +15,4 @@ From <%= booking.start_date %> to <%= booking.end_date %></li>
 <% end %>
 </ul>
 
-
-<h3>Past bookings</h3>
+<%= link_to 'Back pet listing page', pets_path %> 
