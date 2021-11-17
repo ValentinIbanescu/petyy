@@ -3,7 +3,7 @@
 <h3>Your pets</h3>
 <ul>
 <% @pets.each do | pet | %>
-<li> <%= pet.name %></li>
+<li> <%= link_to "#{pet.name}", pet_path(pet) %></li>
 <% end %>
 </ul>
 
@@ -15,4 +15,4 @@ From <%= booking.start_date %> to <%= booking.end_date %></li>
 <% end %>
 </ul>
 
-<%= link_to 'Back pet listing page', pets_path %> 
+<%= link_to 'Back pet listing page', pets_path %>
