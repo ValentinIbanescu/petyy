@@ -1,8 +1,8 @@
-<h1>Look at this Pet! Awesome!</h1>
+<h1><%= @pet.name %> </h1>
 
 <div>
-<% @pets.each do |pet| %>
-<h2> Name: <%= pet.name %> - Species: <%= pet.category %></h2>
-<p><%= "Age:" pet.age %></p>
-<% end %>
+<p>Species: <%= @pet.category %></p>
+<p>Age: <%= @pet.age %></p>
+<p>Mecial Situation:<%=@pet.medical_situation %></p>
 </div>
+<p><% if user_signed_in? <%= link_to "Book this pet", bookings_path %> : <%= link_to ""  %> %> </p>
