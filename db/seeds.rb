@@ -66,7 +66,6 @@ puts "creating bookings"
   )
 end
 puts "#{Booking.count} bookings were created successfully."
-
 booking_id = rand(Booking.first.id..Booking.last.id)
 
 puts "creating reviews"
