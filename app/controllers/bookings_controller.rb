@@ -1,23 +1,20 @@
-class BookingController < ApplicationController
-  def index
-    Booking.all
-  end
-
+class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @pet = Pet.find(params[:id])
   end
 
   def create
-    @pet = Pet.find(params[:pet_id])
+    @pet = Pet.find(params[:id])
     @booking = Booking.new(booking_params)
-    @booking.pet = @booking
-    if @booking.save!
+    @booking.pet = @pet
+    @booking.user = current_user
+    if @booking.save
       redirect_to user_path(current_user)
     else
       render :new
     end
   end
-
 
   private
 
