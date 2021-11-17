@@ -2,6 +2,7 @@ class PetsController < ApplicationController
    skip_before_action :authenticate_user!
   def show
     @pet = Pet.find(params[:id])
+    # @user = Pet.user_id
   end
 
   def index
@@ -26,6 +27,7 @@ class PetsController < ApplicationController
     @pet.destroy
     redirect_to pets_path
   end
+
 
   private
 
