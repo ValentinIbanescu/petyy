@@ -13,15 +13,10 @@
   <p><%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
   </div>
 
-  <p><%= link_to "Book this pet", new_pet_booking_path(@pet) %> </p>
-  <p><%= link_to "Back to the list", pets_path %></p>
-
-  <button class="btn-flat">
-  <%= link_to "Book this pet", new_pet_booking_path(@pet) %>
-  </button>
-  <br>
-  <button class="btn-ghost">
-  <%= link_to "Back to the list", pets_path %>
-  </button>
-
-</div>
+<button class="btn-flat">
+<%= link_to "Book this pet", new_pet_booking_path(@pet) %>
+</button>
+<br>
+<button class="btn-ghost">
+<%= link_to "Back to the list", pets_path %>
+</button>
