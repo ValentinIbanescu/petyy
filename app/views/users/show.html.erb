@@ -26,4 +26,15 @@ From <%= booking.start_date.strftime("%e %b %y") %> to <%= booking.end_date.strf
 
 
 <h3>Past bookings</h3>
-
+<h3>all my pets</h3>
+<div class="flex-container">
+<% @pets.each do |pet| %>
+  <div class="card-product">
+    <p><%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill %></p>
+    <div class="card-product-infos">
+      <h2>look at <%= pet.name %></h2>
+      <p>it is a <%= pet.category %>! And you can feed it <%= pet.diet %></p>
+    </div>
+  </div>
+<% end %>
+</div>
