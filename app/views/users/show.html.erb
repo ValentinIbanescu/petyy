@@ -9,7 +9,7 @@
 <h3>Your pets</h3>
 <ul>
 <% @pets.each do | pet | %>
-<li> <%= link_to "#{pet.name}", pet_path(pet) %> <%= link_to "Edit this pet", edit_pet_path(pet)%></li>
+<li> <%= link_to "#{pet.name}", pet_path(pet) %> <%= link_to "Edit this pet", edit_pet_path(pet), class: "btn btn-flat"%></li>
 <% end %>
 </ul>
 
