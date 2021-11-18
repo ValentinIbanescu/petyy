@@ -1,8 +1,19 @@
 
-<ul>
-<% @pets.each do |pet| %>
-<li>Name: <%=link_to "#{pet.name}", pet_path(pet) %> - Species: <%=pet.category%></li>
-<% end %>
-</ul>
+<h1 style="text-align: center">Our Cuties!</h1>
 
 
+    <div class="flex-container">
+      <% if (@pets.count == 0) %>
+      <p>No pet registered yet</p>
+      <% else %>
+        <% @pets.each do | pet | %>
+          <div class="card-pet">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2><%= link_to "#{pet.name}", pet_path(pet) %></h2>
+              <p><%= pet.category %>, <%= pet.age %> years old</p>
+            </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
