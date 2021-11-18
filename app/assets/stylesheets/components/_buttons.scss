@@ -5,8 +5,19 @@
   background: $vividorange;
   transition: background 0.3s ease;
   border-style: none;
+  margin: 15px 10px;
+}
+
+.btn-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background: $green;
+  transition: background 0.3s ease;
+  border-style: none;
   margin: 10px 0px;
 }
+
 
 .btn-cancel {
   color: white;
