@@ -1,6 +1,7 @@
 .cover {
+  height: 90vh;
   background-image: url(asset_path('cover.svg'));
-  height: 80vh;
+  height: 600px;
   background-size: cover;
   display: flex;
   justify-content: space-around;
