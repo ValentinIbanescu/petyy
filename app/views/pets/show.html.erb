@@ -1,16 +1,17 @@
+<div class="container">
 
-<h1>Hello I'm <%= @pet.name %>🍀</h1>
-<p>I'm a lovely <%= @pet.category %>, and eat <%= @pet.diet %></p>
-<p>My owner is <%= @pet.user.first_name%>! I live in <%= @pet.user.address%> 🏠</p>
+  <h1>Hello I'm <%= @pet.name %>🍀</h1>
+  <p>I'm a lovely <%= @pet.category %>, and eat <%= @pet.diet %></p>
+  <p>My owner is <%= @pet.user.first_name%>! I live in <%= @pet.user.address%> 🏠</p>
 
-<h1><%= @pet.name %> </h1>
+  <h1><%= @pet.name %> </h1>
 
-<div>
-<p>Species: <%= @pet.category %></p>
-<p>Age: <%= @pet.age %></p>
-<p>Mecial Situation:<%=@pet.medical_situation %></p>
-<p><%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
-</div>
+  <div>
+  <p>Species: <%= @pet.category %></p>
+  <p>Age: <%= @pet.age %></p>
+  <p>Mecial Situation:<%=@pet.medical_situation %></p>
+  <p><%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
+  </div>
 
 <button class="btn-flat">
 <%= link_to "Book this pet", new_pet_booking_path(@pet) %>
