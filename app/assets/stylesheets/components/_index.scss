@@ -4,4 +4,9 @@
 @import "navbar";
 @import "cover";
 @import "buttons";
-@import "list_card"
+@import "list_card";
+
+
+ul {
+  list-style-type: none
+}
