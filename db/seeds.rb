@@ -40,9 +40,8 @@ User.create!(
 
 user_id = rand(User.first.id..User.last.id)
 
-
 puts "creating pets"
-5.times do
+12.times do
   Pet.create(
     user_id: user_id,
     name: Faker::Name.first_name,
@@ -52,31 +51,32 @@ puts "creating pets"
     medical_situation: Faker::Emotion.noun
   )
 end
-puts "Petes created"
-file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+puts "Pets created"
+
 
 pets = Pet.all
 pets.each do |pet|
-  sleep 1
+  file = URI.open('https://picsum.photos/id/237/600/400')
   pet.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  file.close
 end
 
 puts "#{Pet.count} pets were created successfully."
 
 pet_id = rand(Pet.first.id..Pet.last.id)
 
-# puts "destroying pets"
-# Booking.destroy_all
-# puts "creating bookings"
-# 5.times do
-#   Booking.create(
-#     user_id: user_id,
-#     pet_id: pet_id,
-#     start_date: '20210912102511',
-#     end_date: '20210919102511'
-#   )
-# end
-# puts "#{Booking.count} bookings were created successfully."
+
+puts "creating bookings"
+5.times do
+  Booking.create(
+    user_id: user_id,
+    pet_id: pet_id,
+    start_date: '20210912102511',
+    end_date: '20210919102511'
+  )
+end
+puts "#{Booking.count} bookings were created successfully."
+
 # booking_id = rand(Booking.first.id..Booking.last.id)
 
 # puts "creating reviews"
