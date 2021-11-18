@@ -67,3 +67,4 @@ gem 'date_validator'
 gem 'validates_timeliness'
 
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
