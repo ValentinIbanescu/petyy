@@ -5,21 +5,20 @@
 }
 
 .footer {
-  background: #FCECDD;
+  background: $footer-blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: $green;
+  opacity: 0.3;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -28,5 +27,11 @@
   opacity: 1;
 }
 .footer .fa-paw {
-  color: #523906;
+  color: $green;
+}
+
+.footer p{
+  opacity: 0.3;
+  margin-bottom: 0;
+  color: $green;
 }

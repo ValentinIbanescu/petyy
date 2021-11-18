@@ -16,6 +16,9 @@
           <div class="card-product-infos">
             <h2><%= link_to "#{pet.name}", pet_path(pet) %></h2>
             <p><%= pet.category %>, <%= pet.age %> years old</p>
+            <button class="btn-ghost">
+            <%= link_to "edit this pet", edit_pet_path(pet) %>
+            </button>
           </div>
       </div>
       <% end %>
