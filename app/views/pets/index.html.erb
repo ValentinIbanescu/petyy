@@ -1,4 +1,11 @@
 
+
+<ul>
+<% @pets.each do |pet| %>
+<li>Name: <%=link_to "#{pet.name}", pet_path(pet) %> - Species: <%=pet.category%></li>
+<% end %>
+</ul>
+
 <h1 style="text-align: center">Our Cuties!</h1>
 
 
@@ -17,3 +24,4 @@
         <% end %>
       <% end %>
     </div>
+
