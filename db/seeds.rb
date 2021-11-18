@@ -30,7 +30,7 @@ User.create!(
     address:"Berlin 1")
 
 User.create!(
-    password: "123457682192",
+    password: "railsrails ",
     email: "valentin@lewagon.com",
     first_name: "Valentin",
     last_name: "Miller",
