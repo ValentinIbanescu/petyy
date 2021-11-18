@@ -5,16 +5,20 @@
 </div>
 
 <div class="container">
-  <div class="card-white">
-    <h3>Your pets</h3>
-    <% @pets.each do | pet | %>
-      <div class="card-pet">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <h2><%= link_to "#{pet.name}", pet_path(pet) %></h2>
-          <p><%= pet.category %>, <%= pet.age %> years old</p>
-        </div>
-    </div>
+  <div class="card-white p-3">
+    <h3 style="font-weight:bold">Your pets</h3>
+    <% if (@pets.count == 0) %>
+    <p>No pet registered yet</p>
+    <% else %>
+      <% @pets.each do | pet | %>
+        <div class="card-pet">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= link_to "#{pet.name}", pet_path(pet) %></h2>
+            <p><%= pet.category %>, <%= pet.age %> years old</p>
+          </div>
+      </div>
+      <% end %>
     <% end %>
 
     <div>
@@ -22,14 +26,18 @@
     </div>
   </div>
 
-  <div class="card-white">
-    <h3>Your bookings</h3>
-    <ul>
-    <% @bookings.each do | booking | %>
-    <li> <%= Pet.find(booking.pet_id).name %>(<%= Pet.find(booking.pet_id).category %>)
-    From <%= booking.start_date.strftime("%e %b %y") %> to <%= booking.end_date.strftime("%e %b %y") %></li>
+  <div class="card-white p-3">
+    <h3 style="font-weight:bold">Your bookings</h3>
+    <% if (@bookings.count == 0) %>
+    <p>No bookings made yet</p>
+    <% else %>
+      <ul class="p-0">
+      <% @bookings.each do | booking | %>
+      <li> <%= Pet.find(booking.pet_id).name %>
+      📅 From <%= booking.start_date.strftime("%b %e, %y") %> to <%= booking.end_date.strftime("%b %e, %y") %></li>
+      <% end %>
+      </ul>
     <% end %>
-    </ul>
 
 
     <div>
