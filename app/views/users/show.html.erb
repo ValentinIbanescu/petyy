@@ -9,7 +9,7 @@
 <h3>Your pets</h3>
 <ul>
 <% @pets.each do | pet | %>
-<li> <%= link_to "#{pet.name}", pet_path(pet) %></li>
+<li> <%= link_to "#{pet.name}", pet_path(pet) %> <%= link_to "Edit this pet", edit_pet_path(pet)%></li>
 <% end %>
 </ul>
 
@@ -26,4 +26,3 @@ From <%= booking.start_date.strftime("%e %b %y") %> to <%= booking.end_date.strf
 
 
 <h3>Past bookings</h3>
-

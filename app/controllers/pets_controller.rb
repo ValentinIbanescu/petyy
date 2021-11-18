@@ -23,6 +23,14 @@ class PetsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @pet.update(pet_params)
+    redirect_to pet_path(@pet)
+  end
+
   def destroy
     @pet.destroy
     redirect_to pets_path
