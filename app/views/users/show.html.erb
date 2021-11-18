@@ -7,6 +7,7 @@
 <div class="container">
   <div class="card-white p-3">
     <h3 style="font-weight:bold">Your pets</h3>
+
     <% if (@pets.count == 0) %>
     <p>No pet registered yet</p>
     <% else %>
@@ -16,10 +17,28 @@
           <div class="card-product-infos">
             <h2><%= link_to "#{pet.name}", pet_path(pet) %></h2>
             <p><%= pet.category %>, <%= pet.age %> years old</p>
+            <button class="btn-ghost">
+            <%= link_to "edit this pet", edit_pet_path(pet) %>
+            </button>
           </div>
       </div>
+
+ <div class="flex-container">
+      <% if (@pets.count == 0) %>
+      <p>No pet registered yet</p>
+      <% else %>
+        <% @pets.each do | pet | %>
+          <div class="card-pet">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2><%= link_to "#{pet.name}", pet_path(pet) %></h2>
+              <p><%= pet.category %>, <%= pet.age %> years old</p>
+            </div>
+        </div>
+        <% end %>
+
       <% end %>
-    <% end %>
+    </div>
 
     <div>
       <%= link_to "Register new pet", new_pet_path, class: "btn btn-flat" %>
