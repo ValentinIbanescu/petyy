@@ -1,0 +1,10 @@
+<div class="card-trip">
+  <p><%= cl_image_tag pet.photo.key, height: 200, width: 300, crop: :fill%></p>
+  <div class="card-trip-infos">
+    <h2><%= pet.name %></h2>
+    <p><%= pet.category %>, <%= pet.age %> years old</p>
+    <% if something %>
+      <p>BANANA</p>
+    <% end %>
+  </div>
+</div>
