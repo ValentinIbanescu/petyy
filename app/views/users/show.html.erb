@@ -13,15 +13,8 @@
         <p>No pet registered yet</p>
       <% else %>
           <% @pets.each do | pet | %>
-            <%= link_to pet_path(pet) do %>
-              <div class="card-pet">
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-                <div class="card-product-infos">
-                  <h2><%= pet.name %></h2>
-                  <p><%= pet.category %>, <%= pet.age %> years old</p>
-                  <button class="btn-ghost" id="btn-edit"><%= link_to "edit this pet", edit_pet_path(pet)%></button>
-                </div>
-              </div>
+            <%= link_to pet_path(pet), class: 'decoration-none' do%>
+            <%= render 'pets/pet_card', pet: pet, something: false %>
             <% end %>
           <% end %>
        <% end %>
@@ -39,7 +32,7 @@
       <p>No bookings made yet</p>
       <% else %>
         <% @bookings.each do | booking | %>
-          <div class="card-pet">
+          <div class="card-trip">
             <%= cl_image_tag booking.pet.photo.key, crop: :fill %>
             <div class="card-product-infos">
               <h2><%= Pet.find(booking.pet_id).name %></h2>
