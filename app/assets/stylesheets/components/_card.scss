@@ -1,43 +1,84 @@
-.card-pet {
+// .card-pet {
+//   overflow: hidden;
+//   height: 120px;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   display: flex;
+//   align-items: center;
+//   margin: 5px;
+//   border-radius: 5px;
+// }
+
+// .card-pet img {
+//   height: 100%;
+//   width: 120px;
+//   object-fit: cover;
+// }
+
+// .card-pet h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
+
+// .card-pet p {
+//   font-size: 12px;
+//   line-height: 1.4;
+//   opacity: .7;
+//   margin-bottom: 0;
+//   margin-top: 8px;
+// }
+
+// .card-pet .card-product-infos {
+//   padding: 16px;
+//   text-align: left;
+// }
+
+// .card-white {
+//   background-color: $cream;
+//   margin: 20px;
+//   text-align: center;
+//   border-radius: 5px;
+//   padding: 3em !important;
+// }
+
+.card-trip {
   overflow: hidden;
-  height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin: 20px;
   border-radius: 5px;
 }
 
-.card-pet img {
-  height: 100%;
-  width: 120px;
+.card-trip > img {
+  height: 200px;
+  width: 100%;
   object-fit: cover;
 }
 
-.card-pet h2 {
+.card-trip h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-pet p {
+.card-trip p {
   font-size: 12px;
-  line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin: 0;
 }
 
-.card-pet .card-product-infos {
+
+.card-trip .card-trip-infos {
   padding: 16px;
-  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }
 
-.card-white {
-  background-color: $cream;
-  margin: 20px;
-  text-align: center;
-  border-radius: 5px;
-  padding: 3em !important;
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }

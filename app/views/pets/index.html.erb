@@ -1,10 +1,13 @@
 
-
+<%
+=begin %>
 <ul>
 <% @pets.each do |pet| %>
 <li>Name: <%=link_to "#{pet.name}", pet_path(pet) %> - Species: <%=pet.category%></li>
 <% end %>
 </ul>
+<%
+=end %>
 
 <h1 style="text-align: center">Our Cuties!</h1>
 
@@ -14,9 +17,10 @@
       <p>No pet registered yet</p>
       <% else %>
         <% @pets.each do | pet | %>
-          <div class="card-pet">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
+          <div class="card-trip">
+            <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+            <p><%= cl_image_tag pet.photo.key, height: 200, width: 300, crop: :fill %></p>
+            <div class="card-trip-infos">
               <h2><%= link_to "#{pet.name}", pet_path(pet) %></h2>
               <p><%= pet.category %>, <%= pet.age %> years old</p>
             </div>
@@ -24,4 +28,3 @@
         <% end %>
       <% end %>
     </div>
-
