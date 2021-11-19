@@ -2,7 +2,6 @@
 # # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 require "open-uri"
 
-
 puts "destroying bookings"
 Booking.destroy_all
 puts "destroying pets"
@@ -32,7 +31,7 @@ User.create!(
     address:"Berlin 1")
 
 User.create!(
-    password: "railsrails ",
+    password: "123457682192",
     email: "valentin@lewagon.com",
     first_name: "Valentin",
     last_name: "Miller",
