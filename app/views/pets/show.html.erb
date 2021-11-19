@@ -20,10 +20,10 @@
             <h5>Age: <%= @pet.age %></h5>
             <br>
             <h5>Medical Situation:</h5>
-            <% if @pet.medical_situation != nil%>
-            <%= @pet.medical_situation%>
+            <% if @pet.medical_situation.empty? %>
+             <%= "I am perfectly healthy!" %>
             <% else%>
-            <%= "I am perfectly healthy!" %>
+              <%= @pet.medical_situation%> 
             <% end %>
 
           </div>
