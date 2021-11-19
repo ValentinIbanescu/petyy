@@ -5,7 +5,8 @@
         <%= simple_form_for @pet do |f| %>
           <%= f.input :name, placeholder: 'Pet name' %>
           <%= f.input :age, placeholder: 'Pet age' %>
-          <%= f.input :category, placeholder: 'Category' %>
+          <%= f.input :category, placeholder: 'Category', collection: %w[Cat Dog Snakes Crocodile Tiger Mongoose Cow Monkey
+Coati Gemsbok Dugong Hartebeest Steer Chipmunk Basilisk Ewe Kangaroo Bunny Fish Mustang Gopher Ocelot Chimpanzee Badger] %>
           <%= f.input :medical_situation, placeholder: 'Medical condition' %>
           <%= f.input :diet, placeholder: 'Diet' %>
           <%= f.input :photo, as: :file%>
