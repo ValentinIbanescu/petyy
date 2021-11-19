@@ -1,40 +1,49 @@
-<div class= "containter">
-  <div class = "container d-flex align-item-center justify-content-center mt-5 mb-3">
-    <h2>Hello, I'm <strong><%= @pet.name %></strong>🍀</h2>
-  </div>
-  <div class="container d-flex justify-content-between align-text-center" >
-    <div class = "row">
-      <div class ="d-flex justify-content-between col-lg-8" >
-        <div class="d-flex jusify-content-between align-items-top">
-          <div>
-            <p><%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
-          </div>
-          <div class="ml-2">
-            <h5>I'm a lovely <strong><%= @pet.category %></strong>, and eat <strong><%= @pet.diet %></strong></h5>
-            <br>
-            <h5>My owner is <%= @pet.user.first_name%>! I live in <%= @pet.user.address%> 🏠</h5>
-            <br>
-            <h5>Species: <%= @pet.category %></h5>
-            <br>
-            <h5>Age: <%= @pet.age %></h5>
-            <br>
-            <h5>Medical Situation:</h5>
-            <% if @pet.medical_situation.empty? %>
-             <%= "I am perfectly healthy!" %>
-            <% else%>
-              <%= @pet.medical_situation%>
-            <% end %>
+<div class= "d-flex flex-column align-items-center">
+  <div class="container card-white p-3 row justify-content-start">
+    <div class = "container d-flex flex-column justify-content-center mb-3">
+      <h2>Hello, I'm <strong><%= @pet.name %></strong>🍀</h2>
+    </div>
+      <div class="container justify-content-between" >
+        <div class =" justify-content-between"  >
+          <div class=" jusify-content-between align-items-top">
+            <div>
+              <p><%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
 
+                <div class="container align-items-left" id="pet-info-box">
+                  <h5>I'm a lovely <strong><%= @pet.category %></strong>, and eat <strong><%= @pet.diet %></strong></h5>
+                  <br>
+                  <h5>My owner is <strong><%= @pet.user.first_name%></strong>! I live in <strong><%= @pet.user.address%></strong>🏠</h5>
+                  <br>
+                  <h5>Species: <%= @pet.category %></h5>
+                  <br>
+                  <h5>Age: <%= @pet.age %></h5>
+                  <br>
+                    <div class= "d-flex flex-row">
+                      <h5>Medical Situation:<% if @pet.medical_situation.empty? %>
+                      <%= "I am perfectly healthy!" %>
+                      <% else%>
+                        <%= "#{@pet.medical_situation}"%>
+                      <% end %></h5>
+                    </div>
+                </div>
+
+            </div>
           </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="container card-white p-3 row justify-content-center height-fit-content">
+      <div class = "form">
+        <%= render 'bookings/form'%>
+      </div>
+      </div>
         </div>
-    </div>
-    <div class = "form col-lg-4">
-      <%= render 'bookings/form', class: "form"%>
-    </div>
-    </div>
-    <div class= "container d-flex align-item-center justify-content-center">
-    <div class= "btn-ghost" id = "btn-cancel"><%= link_to "Back to the list", pets_path%></div>
+        </div>
+        <div class= " d-flex justify-content-center align-items-center ">
+        <div class= "btn-ghost mb-4" id = "btn-cancel"><%= link_to "Back to the list", pets_path%></div>
+
       </div>
-      </div>
-</div>
+    </div>
 </div>

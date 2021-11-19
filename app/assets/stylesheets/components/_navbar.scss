@@ -1,7 +1,27 @@
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: $orange;
+//   padding: 5px;
+
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+
+//   width: 40px;
+// }
+.navilist{
+  letter-spacing: 10px;
+  color: chocolate;
+  padding-right: 50px ;
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: $orange;
-
+  align-items: center;
   height: 50px;
   position: sticky;
   top: 0;

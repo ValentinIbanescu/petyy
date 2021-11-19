@@ -19,7 +19,7 @@
         <% @pets.each do | pet | %>
 
 
-          <%= link_to pet_path(pet) do%>
+          <%= link_to pet_path(pet), class: 'decoration-none' do%>
             <%= render 'pet_card', pet: pet, something: false %>
           <% end %>
 
