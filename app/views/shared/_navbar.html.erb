@@ -1,21 +1,31 @@
-<div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
+<nav class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon p-4">
   <a class="navbar-brand" href="/">
     <img src="https://www.pinclipart.com/picdir/big/576-5767387_dog-icon-transparent-background-clipart.png"/>
-</a>
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav align-items-center justify-content-between mr-auto">
+      <li><%= link_to "home", root_path, class: "navilist" %></li>
+      <li><% if current_user.present? %>
+          <%= link_to "dashboard", user_path(current_user), class: "navilist"  %>
+          <% end %></li>
+      <li><%= link_to "pets", pets_path, class: "navilist"  %></li>
 
-      <li class="navilist">my page</li>
-      <li class="navilist">pets</li>
-      <li class="navilist">home</li>
-      <li class="navilist">log out</li>
       <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.matthes-seitz-berlin.de/fs/authors/maruan-paschen/005355.big.jpg" />
+      <% if current_user.present? %>
+        <% if current_user.email == "akiho@lewagon.com" %>
+        <% avatar = "https://i.picsum.photos/id/1011/5472/3648.jpg?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk" %>
+        <% else %>
+        <% avatar = "https://www.matthes-seitz-berlin.de/fs/authors/maruan-paschen/005355.big.jpg"%>
+        <% end %>
+        <% else %>
+        <% avatar = "https://www.matthes-seitz-berlin.de/fs/authors/maruan-paschen/005355.big.jpg"%>
+        <% end %>
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= avatar %>" />
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if current_user.present? %>
           <%= link_to "My Page", user_path(current_user), class: "dropdown-item" %>
@@ -28,7 +38,6 @@
 
         </div>
       </li>
-
     </ul>
   </div>
-</div>
+</nav>
