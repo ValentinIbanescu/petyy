@@ -1,47 +1,3 @@
-// .card-pet {
-//   overflow: hidden;
-//   height: 120px;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   display: flex;
-//   align-items: center;
-//   margin: 5px;
-//   border-radius: 5px;
-// }
-
-// .card-pet img {
-//   height: 100%;
-//   width: 120px;
-//   object-fit: cover;
-// }
-
-// .card-pet h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
-
-// .card-pet p {
-//   font-size: 12px;
-//   line-height: 1.4;
-//   opacity: .7;
-//   margin-bottom: 0;
-//   margin-top: 8px;
-// }
-
-// .card-pet .card-product-infos {
-//   padding: 16px;
-//   text-align: left;
-// }
-
-// .card-white {
-//   background-color: $cream;
-//   margin: 20px;
-//   text-align: center;
-//   border-radius: 5px;
-//   padding: 3em !important;
-// }
-
 .card-trip {
   overflow: hidden;
   background: white;
@@ -61,13 +17,11 @@
   object-fit: cover;
 }
 
-
 .card-trip h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
-
 
 .card-trip p {
   font-size: 12px;
@@ -75,7 +29,9 @@
   margin: 0;
 }
 
-
+.card-trip p:hover {
+  opacity: 1;
+}
 
 .card-trip-infos p:hover {
   font-size: 12px;
@@ -83,7 +39,6 @@
   margin: 0;
   text-decoration: none;
 }
-
 
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -95,6 +50,7 @@
 
 .card-trip .card-trip-infos a:hover {
   text-decoration: none;
+  opacity: 1;
 }
 
 .card-trip-infos .card-trip-user {
