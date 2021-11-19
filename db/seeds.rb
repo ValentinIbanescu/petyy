@@ -10,28 +10,28 @@ puts "destroying users"
 User.destroy_all
 
 User.create!(
-    password: "123457682192",
+    password: "000000",
     email: "akiho@lewagon.com",
     first_name: "Akiho",
     last_name: "Hamamoto",
     address:"Berlin 1")
 
 User.create!(
-    password: "123457682192",
+    password: "000000",
     email: "yian@lewagon.com",
     first_name: "Yi-An",
     last_name: "Ko",
     address:"Berlin 1")
 
 User.create!(
-    password: "123457682192",
+    password: "000000",
     email: "maruan@lewagon.com",
     first_name: "Maruan",
     last_name: "Paschen",
     address:"Berlin 1")
 
 User.create!(
-    password: "123457682192",
+    password: "000000",
     email: "valentin@lewagon.com",
     first_name: "Valentin",
     last_name: "Miller",
