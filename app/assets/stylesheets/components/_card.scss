@@ -47,6 +47,12 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
+  color: #3F3D56;
+  font-size: 1.5em;
+}
+
+.card-trip a:hover {
+  text-decoration: none;
 }
 
 .card-trip > img {
@@ -68,12 +74,25 @@
 }
 
 
+
+.card-trip-infos p:hover {
+  font-size: 12px;
+  opacity: 1;
+  margin: 0;
+  text-decoration: none;
+}
+
+
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.card-trip .card-trip-infos a:hover {
+  text-decoration: none;
 }
 
 .card-trip-infos .card-trip-user {

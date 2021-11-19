@@ -9,7 +9,7 @@
 <%
 =end %>
 
-<h1 style="text-align: center">Our Cuties!</h1>
+<h1 style="text-align: center" class="p-2">Our Cuties!</h1>
 
 
     <div class="flex-container">
@@ -17,14 +17,13 @@
       <p>No pet registered yet</p>
       <% else %>
         <% @pets.each do | pet | %>
-          <div class="card-trip">
-            <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
-            <p><%= cl_image_tag pet.photo.key, height: 200, width: 300, crop: :fill %></p>
-            <div class="card-trip-infos">
-              <h2><%= link_to "#{pet.name}", pet_path(pet) %></h2>
-              <p><%= pet.category %>, <%= pet.age %> years old</p>
-            </div>
-        </div>
+
+
+          <%= link_to pet_path(pet) do%>
+            <%= render 'pet_card', pet: pet, something: false %>
+          <% end %>
+
+
         <% end %>
       <% end %>
     </div>
