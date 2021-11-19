@@ -8,22 +8,23 @@
   <div class="card-white p-3">
     <h3 style="font-weight:bold">Your pets</h3>
 
- <div class="flex-container">
+    <div class="flex-container">
       <% if (@pets.count == 0) %>
-      <p>No pet registered yet</p>
+        <p>No pet registered yet</p>
       <% else %>
-        <% @pets.each do | pet | %>
-          <div class="card-pet">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2><%= link_to "#{pet.name}", pet_path(pet) %></h2>
-              <p><%= pet.category %>, <%= pet.age %> years old</p>
-              <button class="btn-ghost" id="btn-edit"><%= link_to "edit this pet", edit_pet_path(pet)%></button>
-            </div>
-        </div>
-        <% end %>
-
-      <% end %>
+          <% @pets.each do | pet | %>
+            <%= link_to pet_path(pet) do %>
+              <div class="card-pet">
+                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+                <div class="card-product-infos">
+                  <h2><%= pet.name %></h2>
+                  <p><%= pet.category %>, <%= pet.age %> years old</p>
+                  <button class="btn-ghost" id="btn-edit"><%= link_to "edit this pet", edit_pet_path(pet)%></button>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+       <% end %>
     </div>
 
     <div>
@@ -33,20 +34,24 @@
 
   <div class="card-white p-3">
     <h3 style="font-weight:bold">Your bookings</h3>
-    <% if (@bookings.count == 0) %>
-    <p>No bookings made yet</p>
-    <% else %>
-      <ul class="p-0">
-      <% @bookings.each do | booking | %>
-      <li> <%= Pet.find(booking.pet_id).name %>
-      📅 From <%= booking.start_date.strftime("%b %e, %y") %> to <%= booking.end_date.strftime("%b %e, %y") %></li>
+    <div class="flex-container">
+      <% if (@bookings.count == 0) %>
+      <p>No bookings made yet</p>
+      <% else %>
+        <% @bookings.each do | booking | %>
+          <div class="card-pet">
+            <%= cl_image_tag booking.pet.photo.key, crop: :fill %>
+            <div class="card-product-infos">
+              <h2><%= Pet.find(booking.pet_id).name %></h2>
+              <p>Start date: <%= booking.start_date.strftime("%b %e, %y") %></p>
+              <p>End date: <%= booking.end_date.strftime("%b %e, %y") %></p>
+            </div>
+        </div>
+        <% end %>
       <% end %>
-      </ul>
-    <% end %>
-
-
+    </div>
     <div>
-    <%= link_to 'Back to pets page', pets_path, class: "btn btn-green"%>
+      <%= link_to 'Back to pets page', pets_path, class: "btn btn-green"%>
     </div>
   </div>
 </div>
