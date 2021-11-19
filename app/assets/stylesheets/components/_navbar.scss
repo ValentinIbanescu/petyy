@@ -1,11 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $orange;
-
-  height: 50px;
-  position: sticky;
-  top: 0;
-
+  padding: 5px;
 
 }
 
@@ -16,4 +12,9 @@
 .navbar-lewagon .navbar-brand img {
 
   width: 40px;
+}
+.navilist{
+  letter-spacing: 10px;
+  color: chocolate;
+  padding-right: 35px ;
 }
