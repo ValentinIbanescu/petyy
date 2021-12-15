@@ -7,7 +7,7 @@
         <div class =" justify-content-between"  >
           <div class=" jusify-content-between align-items-top">
             <div>
-              <p><%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
+              <p><%= cl_image_tag("non_existing_id.png", :default_image => "my_default_image_mciyv8.jpg") @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
 
                 <div class="container align-items-left" id="pet-info-box">
                   <h5>I'm a lovely <strong><%= @pet.category %></strong>, and eat <strong><%= @pet.diet %></strong></h5>
